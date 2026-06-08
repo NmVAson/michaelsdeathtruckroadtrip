@@ -1,7 +1,7 @@
 ---
 title: "Where in the heck are we even driving?"
 episode: 1
-date: 2026-06-08 3:37:00 -0700
+date: 2026-06-08 15:37:00 -0700
 location: "Lamplighters"
 lat: 39.322914
 lng: -84.512743
