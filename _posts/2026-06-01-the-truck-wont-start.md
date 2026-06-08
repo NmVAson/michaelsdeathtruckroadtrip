@@ -19,8 +19,9 @@ this all added up to a plan.
 Here is what I caught:
 
 - **Louisville** &mdash; drop off a trailer. (Whose trailer? Unclear. He waved.)
-- **Nashville** &mdash; pick up a mandolin. (He does not currently play the
-  mandolin. He says it'd rip on th beach.)
+- **Nashville** &mdash; pick up a mandolin from Micah's house. It belonged to
+  Great Uncle Hershel. Michael does not currently play the mandolin. He says
+  it'd rip on th beach.
 - **Somewhere** &mdash; pick up a camp stove. He said the name of the town with
   the confidence of a man who had not yet looked at a map.
 - **Georgia, maybe** &mdash; some friends live there. He's not sure where in
