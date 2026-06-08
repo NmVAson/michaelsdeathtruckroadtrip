@@ -1,0 +1,44 @@
+title: Michael's Death Truck Road Trip
+description: >-
+  A field report from a road trip that, by all reasonable expectations,
+  should not be happening. Documented in motion. Filed under "ill-advised."
+url: https://michaelsdeathtruckroadtrip.com
+baseurl: ""
+
+author:
+  name: The Passenger
+
+permalink: /ep/:slug/
+
+theme: null
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+sass:
+  style: compressed
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: episode
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .gitattributes
+  - serve.ps1
+  - serve.cmd
+

@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<article class="episode">
+  <header class="episode__header wrap">
+    <p class="episode__meta">
+      <span class="episode__ep">Ep. {{ page.episode | default: '??' }}</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%A, %B %-d, %Y" }}
+      </time>
+      {% if page.location %}
+        <span class="episode__loc">&middot; {{ page.location }}</span>
+      {% endif %}
+    </p>
+    <h1 class="episode__title">{{ page.title }}</h1>
+  </header>
+
+  {% if page.video %}
+    <div class="episode__player wrap">
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        {% if page.poster %}poster="{{ page.poster | relative_url }}"{% endif %}>
+        <source src="{{ page.video | relative_url }}" type="video/mp4">
+        Your browser can't play this video. The truck can't start either. We're all having a day.
+      </video>
+    </div>
+  {% endif %}
+
+  <div class="episode__body wrap prose">
+    {{ content }}
+  </div>
+
+  <nav class="episode__pager wrap" aria-label="Episode navigation">
+    {% if page.previous %}
+      <a class="episode__pager-prev" href="{{ page.previous.url | relative_url }}">
+        <span>&larr; Previous</span>
+        <strong>{{ page.previous.title }}</strong>
+      </a>
+    {% endif %}
+    {% if page.next %}
+      <a class="episode__pager-next" href="{{ page.next.url | relative_url }}">
+        <span>Next &rarr;</span>
+        <strong>{{ page.next.title }}</strong>
+      </a>
+    {% endif %}
+  </nav>
+</article>

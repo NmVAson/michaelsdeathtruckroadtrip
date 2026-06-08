@@ -1,0 +1,63 @@
+---
+layout: default
+title: Episodes
+---
+<section class="hero wrap">
+  <h1 class="hero__title">{{ site.title }}</h1>
+  <p class="hero__sub">{{ site.description }}</p>
+</section>
+
+{% if site.posts.size > 0 %}
+  {% assign latest = site.posts | first %}
+  <section class="latest wrap">
+    <p class="latest__label">Latest dispatch</p>
+    <article class="latest__card">
+      {% if latest.video %}
+        <div class="latest__player">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            {% if latest.poster %}poster="{{ latest.poster | relative_url }}"{% endif %}>
+            <source src="{{ latest.video | relative_url }}" type="video/mp4">
+          </video>
+        </div>
+      {% elsif latest.poster %}
+        <a class="latest__poster" href="{{ latest.url | relative_url }}">
+          <img src="{{ latest.poster | relative_url }}" alt="">
+        </a>
+      {% endif %}
+      <div class="latest__body">
+        <p class="latest__meta">
+          <span>Ep. {{ latest.episode | default: '??' }}</span>
+          <time datetime="{{ latest.date | date_to_xmlschema }}">
+            {{ latest.date | date: "%b %-d, %Y" }}
+          </time>
+          {% if latest.location %}<span>{{ latest.location }}</span>{% endif %}
+        </p>
+        <h2 class="latest__title">
+          <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+        </h2>
+        {% if latest.excerpt %}
+          <p class="latest__excerpt">{{ latest.excerpt | strip_html | truncate: 240 }}</p>
+        {% endif %}
+        <a class="latest__cta" href="{{ latest.url | relative_url }}">Read the dispatch &rarr;</a>
+      </div>
+    </article>
+  </section>
+
+  {% if site.posts.size > 1 %}
+    <section class="archive wrap">
+      <h2 class="archive__title">Earlier dispatches</h2>
+      <div class="archive__grid">
+        {% for post in site.posts offset:1 %}
+          {% include episode-card.html post=post %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% else %}
+  <section class="empty wrap">
+    <p>No episodes yet. The truck won't start.</p>
+  </section>
+{% endif %}

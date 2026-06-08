@@ -1,0 +1,28 @@
+<article class="card">
+  <a class="card__media" href="{{ include.post.url | relative_url }}">
+    {% if include.post.poster %}
+      <img src="{{ include.post.poster | relative_url }}" alt="" loading="lazy">
+    {% else %}
+      <div class="card__media--placeholder" aria-hidden="true">
+        <span>EP {{ include.post.episode | default: '??' }}</span>
+      </div>
+    {% endif %}
+  </a>
+  <div class="card__body">
+    <p class="card__meta">
+      <span class="card__ep">Ep. {{ include.post.episode | default: '??' }}</span>
+      <time datetime="{{ include.post.date | date_to_xmlschema }}">
+        {{ include.post.date | date: "%b %-d, %Y" }}
+      </time>
+      {% if include.post.location %}
+        <span class="card__loc">{{ include.post.location }}</span>
+      {% endif %}
+    </p>
+    <h2 class="card__title">
+      <a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
+    </h2>
+    {% if include.post.excerpt %}
+      <p class="card__excerpt">{{ include.post.excerpt | strip_html | truncate: 180 }}</p>
+    {% endif %}
+  </div>
+</article>

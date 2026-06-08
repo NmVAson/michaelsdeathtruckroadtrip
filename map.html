@@ -1,0 +1,56 @@
+---
+layout: default
+title: Map
+permalink: /map/
+body_class: page-map
+---
+<section class="map-intro wrap">
+  <h1>The route</h1>
+  <p>Every marker is a place the truck was, at least briefly, still running. Click a pin for the episode.</p>
+</section>
+
+<div id="map" class="route-map" aria-label="Route map"></div>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+<script>
+  (function () {
+    var map = L.map('map', { scrollWheelZoom: false }).setView([39.5, -98.35], 4);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    fetch('{{ "/episodes.json" | relative_url }}')
+      .then(function (r) { return r.json(); })
+      .then(function (episodes) {
+        var points = [];
+        episodes.forEach(function (ep) {
+          if (ep.lat == null || ep.lng == null) return;
+          var marker = L.marker([ep.lat, ep.lng]).addTo(map);
+          marker.bindPopup(
+            '<strong><a href="' + ep.url + '">' + ep.title + '</a></strong>' +
+            '<br><small>Ep. ' + (ep.episode || '??') +
+            (ep.location ? ' &middot; ' + ep.location : '') + '</small>'
+          );
+          points.push([ep.lat, ep.lng]);
+        });
+        if (points.length > 1) {
+          L.polyline(points, { color: '#c0532a', weight: 3, opacity: 0.8 }).addTo(map);
+          map.fitBounds(points, { padding: [40, 40] });
+        } else if (points.length === 1) {
+          map.setView(points[0], 8);
+        }
+      })
+      .catch(function (err) {
+        console.error('Could not load episodes.json', err);
+      });
+  })();
+</script>

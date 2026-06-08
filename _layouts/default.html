@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+  <title>{% if page.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+</head>
+<body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
+  {% include nav.html %}
+
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Filed under <em>ill-advised</em>.</p>
+      <p class="site-footer__fine">No truck was harmed in the making of this website. The truck was harmed elsewhere.</p>
+    </div>
+  </footer>
+</body>
+</html>

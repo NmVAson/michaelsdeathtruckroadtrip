@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /episodes.json
+---
+[
+{% for post in site.posts %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "date": {{ post.date | date_to_xmlschema | jsonify }},
+    "episode": {{ post.episode | default: nil | jsonify }},
+    "location": {{ post.location | default: "" | jsonify }},
+    "lat": {% if post.lat %}{{ post.lat }}{% else %}null{% endif %},
+    "lng": {% if post.lng %}{{ post.lng }}{% else %}null{% endif %}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
