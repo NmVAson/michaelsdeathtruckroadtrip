@@ -1,7 +1,7 @@
 ---
 title: "The Catio Comes With Us. Eh, nevermind."
 episode: 2
-date: 2026-06-08 16:42:00 -0700
+date: 2026-06-08 16:42:00 -0400
 location: "Lamplighters"
 lat: 39.322914
 lng: -84.512743
