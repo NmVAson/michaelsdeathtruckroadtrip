@@ -1,29 +1,38 @@
 ---
-title: "The Truck Won't Start"
+title: "Where in the heck are we even driving?"
 episode: 1
-date: 2026-06-01 09:00:00 -0700
-location: "A driveway, Oakland CA"
-lat: 37.8044
-lng: -122.2712
-excerpt: "Day one. The truck won't start. I am choosing to interpret this as a good omen."
+date: 2026-06-08 3:37:00 -0700
+location: "Lamplighters"
+lat: 39.322914
+lng: -84.512743
+excerpt: "Michael has just listed approximately nine destinations in one breath. I am writing them down. None of them are on the way to each other."
 # video: /assets/video/ep-01.mp4
 # poster: /assets/img/ep-01-poster.jpg
 ---
 
-It is 9:00 AM. The truck won't start.
+Michael has just outlined the route.
 
-Michael is *certain* this is just the starter solenoid.
-I am *certain* we should have rented a Subaru.
+I use the word *route* generously. What he actually did was list a series of
+errands, favors, and vague gestures toward states, and then look at me as if
+this all added up to a plan.
 
-We push it down the block. Onlookers wave. One man, watering his lawn, says
-&ldquo;That's a hell of a truck.&rdquo; He doesn't elaborate.
+Here is what I caught:
 
-By 11:00, after an intervention involving a hammer and what Michael describes as
-&ldquo;a kind of asking nicely,&rdquo; the truck starts. It immediately stalls. Then it starts again,
-this time with a noise neither of us recognizes. We take this as consent and depart.
+- **Louisville** &mdash; drop off a trailer. (Whose trailer? Unclear. He waved.)
+- **Nashville** &mdash; pick up a mandolin. (He does not currently play the
+  mandolin. He says it'd rip on th beach.)
+- **Somewhere** &mdash; pick up a camp stove. He said the name of the town with
+  the confidence of a man who had not yet looked at a map.
+- **Georgia, maybe** &mdash; some friends live there. He's not sure where in
+  Georgia. He's pretty sure they still live there.
+- **A tree** &mdash; somewhere. To hang a hammock between. To sleep in. Because why hotels.
 
-We are now on the road. There is no plan. There is a cooler.
+When I asked which of these happens first, he said &ldquo;we'll see what the
+truck wants to do.&rdquo;
 
-> Mile 1 of an unknown number. Truck is making the noise again.
+> So: a mandolin, a trailer, a stove, some friends, a tree. In that order, or
+> any other order. Possibly all in the same day.
 
-**Next:** anywhere east of here that has a parts store.
+I'll update the map as the actual route reveals itself. Place your bets.
+
+**Next:** wherever the truck points.
